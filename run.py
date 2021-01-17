@@ -9,8 +9,8 @@ from PIL import Image
 # Specify the TensorFlow model, labels, and image
 script_dir = pathlib.Path(__file__).parent.absolute()
 model_file = os.path.join(script_dir, 'dogvscat.tflite')
-label_file = os.path.join(script_dir, 'annotations/list.txt')
-image_file = os.path.join(script_dir, 'test_images/')
+label_file = os.path.join(script_dir, 'classes')
+image_file = os.path.join(script_dir, 'test_images/cat.png')
 
 # Initialize the TF interpreter
 interpreter = edgetpu.make_interpreter(model_file)
