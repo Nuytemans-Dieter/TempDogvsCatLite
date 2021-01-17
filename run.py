@@ -9,7 +9,7 @@ from PIL import Image
 # Specify the TensorFlow model, labels, and image
 script_dir = pathlib.Path(__file__).parent.absolute()
 model_file = os.path.join(script_dir, 'dogvscat.tflite')
-label_file = os.path.join(script_dir, 'labels.txt')
+labels = ['Dog', 'Cat']
 image_file = os.path.join(script_dir, 'test_images/cat.png')
 
 # Initialize the TF interpreter
@@ -26,6 +26,5 @@ interpreter.invoke()
 classes = classify.get_classes(interpreter, top_k=1)
 
 # Print the result
-labels = dataset.read_label_file(label_file)
 for c in classes:
-  print('%s: %.5f' % (labels.get(c.id, c.id), c.score))
+  print('%s: %.5f' % (labels[c.id], c.score))
