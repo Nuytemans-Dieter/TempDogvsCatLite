@@ -27,5 +27,4 @@ classes = classify.get_classes(interpreter, top_k=1)
 
 # Print the result
 for c in classes:
-  print(c.id)
-  print('%s: %.5f' % (labels[c.id], c.score))
+  print('%s: %.5f' % (c.id, c.score))
