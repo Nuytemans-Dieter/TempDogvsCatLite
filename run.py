@@ -26,5 +26,6 @@ interpreter.invoke()
 classes = classify.get_classes(interpreter, top_k=1)
 
 # Print the result
+labels = dataset.read_label_file(label_file)
 for c in classes:
-  print('%s: %.5f' % (c.id, c.score))
+  print('%s: %.5f' % (labels.get(c.id, c.id), c.score))
