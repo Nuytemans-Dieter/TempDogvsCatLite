@@ -10,7 +10,7 @@ from PIL import Image
 script_dir = pathlib.Path(__file__).parent.absolute()
 model_file = os.path.join(script_dir, 'dogvscat.tflite')
 label_file = os.path.join(script_dir, 'annotations/list.txt')
-image_file = os.path.join(script_dir, 'test_images/cat.png')
+image_file = os.path.join(script_dir, 'test_images/')
 
 # Initialize the TF interpreter
 interpreter = edgetpu.make_interpreter(model_file)
